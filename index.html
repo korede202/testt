@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRADING SYSTEM</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <section class="background">
+      <div class="one">
+        <h3>
+          <marquee behavior="scroll" direction="right"
+            >This is a grading system. Please enter the score to check the
+            grade.</marquee>
+        </h3>
+        <br /><br />
+        <center>
+          <h1>GRADING SYSTEM</h1>
+          <br />
+          <input type="number" id="score" placeholder="input the score" />
+          <button onclick="checkScore ()">Check</button>
+          <div id="showResult">Result will show here</div>
+          <br /><br />
+        </center>
+      </div>
+    </section>
+
+    <script>
+      var song = new Audio("./audio/f9audio.m4a");
+      var song1 = new Audio("./audio/e8audio.m4a");
+      var song2 = new Audio("./audio/d7audio.mp3");
+      var song3 = new Audio("./audio/c4audio.mp3");
+      var song4 = new Audio("./audio/b2audio.wav");
+      var song5 = new Audio("./audio/a1audio.wav");
+      var song6 = new Audio("./audio/aplusaudio.mp3");       
+
+      
+      console.log(showResult.innerHTML);
+      function checkScore() {
+        console.log(score.value);
+        if (score.value >= 0 && score.value < 40) {
+          console.log("F");
+          showResult.innerHTML = "F - Fail";
+          song.play();
+        } else if (score.value >= 40 && score.value < 45) {
+          console.log("E");
+          song1.play();
+
+          showResult.innerHTML = "E - Pass";
+        } else if (score.value >= 45 && score.value < 50) {
+          console.log("D");
+          song2.play();
+
+          showResult.innerHTML = "D - Average";
+        } else if (score.value >= 50 && score.value < 60) {
+          console.log("C");
+          song3.play();
+
+          showResult.innerHTML = "C - Credit";
+        } else if (score.value >= 60 && score.value < 70) {
+          console.log("B");
+          song4.play();
+
+          showResult.innerHTML = "B - Good";
+        } else if (score.value >= 70 && score.value < 80) {
+          console.log("AB");
+          song5.play();
+
+          showResult.innerHTML = "AB - Very Good";
+        } else if (score.value >= 80 && score.value <= 100) {
+          console.log("A");
+          song6.play();
+
+          showResult.innerHTML = "A - Excellent";
+        } else {
+          console.log("Invalid");
+          showResult.innerHTML = "Invalid";
+        }
+      }
+    </script>
+  </body>
+</html>
